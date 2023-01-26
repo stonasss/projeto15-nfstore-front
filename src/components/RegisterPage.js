@@ -9,6 +9,13 @@ export default function RegisterPage() {
     const [confirmPassword, setConfirmPassword] = useState("");
 
     function signUp(e) {
+        e.preventDefault();
+
+        if (password !== confirmPassword) {
+            alert("As senhas não conferem!");
+            return;
+        }
+
         axios
             .post(`${process.env.REACT_APP_API_URL}/cadastro`, {
                 username,
@@ -18,13 +25,12 @@ export default function RegisterPage() {
             })
             .then((res) => {
                 console.log(res.data);
-                alert('Usuário cadastrado');
+                alert("Usuário cadastrado");
             })
             .catch((err) => {
                 console.log(err);
-                alert('Dados inválidos!')
+                alert("Dados inválidos!");
             });
-        e.preventDefault();
     }
 
     return (
@@ -66,7 +72,9 @@ export default function RegisterPage() {
                             placeholder="Confirme a senha"
                             type="password"
                             value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.currentTarget.value)}
+                            onChange={(e) =>
+                                setConfirmPassword(e.currentTarget.value)
+                            }
                             required
                         ></Input>
                     </Label>
