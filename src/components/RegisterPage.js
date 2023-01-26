@@ -6,12 +6,31 @@ export default function RegisterPage() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirm, setConfirm] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    function signUp(e) {
+        axios
+            .post(`${process.env.REACT_APP_API_URL}/cadastro`, {
+                username,
+                email,
+                password,
+                confirmPassword,
+            })
+            .then((res) => {
+                console.log(res.data);
+                alert('Usuário cadastrado');
+            })
+            .catch((err) => {
+                console.log(err);
+                alert('Dados inválidos!')
+            });
+        e.preventDefault();
+    }
 
     return (
         <>
             <Body>
-                <Form>
+                <Form onSubmit={signUp}>
                     <Label htmlFor="name">
                         <Input
                             placeholder="Nome"
@@ -46,8 +65,8 @@ export default function RegisterPage() {
                         <Input
                             placeholder="Confirme a senha"
                             type="password"
-                            value={confirm}
-                            onChange={(e) => setConfirm(e.currentTarget.value)}
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.currentTarget.value)}
                             required
                         ></Input>
                     </Label>
@@ -80,9 +99,10 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
+    font-family: "Roboto Condensed";
     width: 315px;
     height: 45px;
-    font-size: 16px;
+    font-size: 14px;
     margin: 2px;
     padding-left: 15px;
     border-style: none;
@@ -96,12 +116,13 @@ const Input = styled.input`
 const Button = styled.button`
     margin: 15px auto 35px auto;
     align-items: center;
-    width: 332px;
+    width: 90px;
     height: 39px;
-    font-size: 17px;
+    font-family: "Roboto Condensed";
+    font-size: 16px;
     font-weight: 600;
-    color: #fefeff;
-    background-color: #a328d6;
+    color: #fe6910;
+    background-color: #f7dfd6;
     border-radius: 5px;
     border-style: none;
 `;

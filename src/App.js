@@ -11,7 +11,7 @@ export default function App() {
 }
 
 const Screen = styled.div`
-    font-family: "Raleway", "sans-serif";
+    font-family: "Roboto Condensed", "Oswald", "sans-serif";
     background-color: #f3f7fa;
     width: 100vw;
     height: 100vh;
