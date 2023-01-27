@@ -1,12 +1,22 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
+import GlobalStyle from "./GlobalStyle";
 import RegisterPage from "./components/RegisterPage";
+import HomePage from "./components/HomePage";
 
 export default function App() {
     return (
-        <Screen>
-            <RegisterPage />
-        </Screen>
+        <BrowserRouter>
+            <GlobalStyle/>
+            <Routes>
+                <Route path="/home" element={<HomePage/>}/>
+                <Route path="/register" element={<RegisterPage/>}/>
+
+
+            </Routes>
+        
+        </BrowserRouter>
     );
 }
 
