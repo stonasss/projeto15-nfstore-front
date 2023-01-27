@@ -17,7 +17,7 @@ export default function RegisterPage() {
         }
 
         axios
-            .post(`${process.env.REACT_APP_API_URL}/cadastro`, {
+            .post(`/cadastro`, {
                 username,
                 email,
                 password,

@@ -4,18 +4,23 @@ import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import RegisterPage from "./components/RegisterPage";
 import HomePage from "./components/HomePage";
+import { AuthProvider } from "./Context/autentificationContext";
+import Login from "./components/LoginPage";
 
 export default function App() {
     return (
         <BrowserRouter>
-            <GlobalStyle/>
+            <GlobalStyle />
             <Routes>
-                <Route path="/home" element={<HomePage/>}/>
-                <Route path="/register" element={<RegisterPage/>}/>
+                <Route element={<AuthProvider />}>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                </Route>
 
 
             </Routes>
-        
+
         </BrowserRouter>
     );
 }
