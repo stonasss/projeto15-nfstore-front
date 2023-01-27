@@ -17,6 +17,9 @@ function HomePage() {
 
     return (
         <Screen>
+
+            <Navbar>
+
             <Top>Let’s get  started <img src="assets/user.png" alt="user"/></Top>
             <Search>
                 <button onSubmit={""}><img src="assets/lupa.png" alt="lupa"/></button>
@@ -28,33 +31,46 @@ function HomePage() {
                 />
             </Search>
 
-            <Filters><button>moderno</button></Filters>
+            <Filters>
+                <button>moderno</button>
+                <button>cubismo</button>
+                <button>esportivo</button>
+            </Filters>
+            
+            </Navbar>
 
             <ItemStyle>
                 <Description>
                     <h1>Monalisa</h1>
                     <p>Monalisa digital feita pelo artista Leon@rdo D.</p>
                 </Description>
-                <button><img src="assets/arrow.png" alt="arrow"/></button>
+
+                <h2>R$1750000</h2>
+               
                 <Img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
                 alt="monalisa"/>
             </ItemStyle>
             <ItemStyle>
                 <Description>
-                    <h1>Monalisa</h1>
-                    <p>Monalisa digital feita pelo artista Leon@rdo D.</p>
+                    <h1>Vincent van Gogh</h1>
+                    <p>Self pintada pelo brilhante Vincentinho</p>
                 </Description>
-                <button><img src="assets/arrow.png" alt="arrow"/></button>
-                <Img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+
+                <h2>R$1550000</h2>
+               
+                <Img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx4PGyba3BR8tRfKdfHPoYo-2C6rPO8vWeTCMBo6TTfy02956e"
                 alt="monalisa"/>
             </ItemStyle>
             <ItemStyle>
                 <Description>
-                    <h1>Monalisa</h1>
-                    <p>Monalisa digital feita pelo artista Leon@rdo D.</p>
+                    <h1>Meisje met de parel</h1>
+                    <p>Criado pelo consagrado J.V.</p>
                 </Description>
-                <button><img src="assets/arrow.png" alt="arrow"/></button>
-                <Img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/687px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+                
+                <h2>R$14000000</h2>
+
+
+                <Img src="http://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=w255-h300-n-l64"
                 alt="monalisa"/>
             </ItemStyle>
             {itens.map((i) => 
@@ -77,7 +93,7 @@ function Item(props){
                     <h1>{name}</h1>
                     <p>{description}</p>
                 </Description>
-                <button><img src="assets/arrow.png" alt="arrow"/></button>
+                <button><img src="assets/arrow.svg" alt="arrow"/></button>
                 <Img src={image}
                 alt={name}/>
         </ItemStyle>
@@ -93,8 +109,22 @@ const Screen = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #93ADD3;
+    background-color: #E7EDFA;
 `;
+
+const Navbar = styled.div`
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #93ADD3;
+    margin: 50px 0px;
+    padding: 15px ;
+    box-sizing: border-box;
+    border-radius: 20px;
+    
+`
 
 const Top = styled.div`
     font-family: "Anton", sans-serif;
@@ -105,7 +135,7 @@ const Top = styled.div`
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    margin: 55px 0px 30px 0px;
+    margin-bottom: 30px;
     img{
         width: 40px;
         height: 40px;
@@ -154,13 +184,11 @@ const Filters = styled.div`
         box-sizing: border-box;
         margin-right: 10px;
         background-color: white;
-        font-family: "roboto", sans-serif;
         font-size: 16px;
         transition-delay: 2s;
         transition: all linear .1s;
         &:hover{
-            color: white;
-            background-color: #999;
+            background-color: #DDD;
         }
         
     }
@@ -171,31 +199,24 @@ const ItemStyle = styled.div`
     width: 326px;
     height: 180px;
     position: relative;
-    background-color: white;
+    background-color: #90AFDE;;
     border-radius: 20px;
-    margin-bottom: 15px;
-    transition: all linear .5s;
+    margin: 5px 0px 10px 0px;
+    transition: all linear .2s;
     box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.1);
-    button{
-        width: 40px;
-        height: 40px;
-        background-color: #636161;
-        border: none;
-        border-radius: 40px;
-        transition: all linear .2s;
+    font-family: 'Nunito', sans-serif;
+
+    &:hover{
+        margin: 0px 0px 15px 0px;
+        img{
+            width: 180px;
+        }
+    }
+    h2{
         position: absolute;
         bottom: 10px;
         left: 10px;
-        img{
-            width: 100%;
-            height: 50%;
-            position: relative;
-            object-fit: cover;
-
-        }
-        &:hover{
-            width: 80px;
-        }
+        font-size: 20px;
     }
     
 
@@ -207,27 +228,29 @@ const Description = styled.div`
     position: absolute;
     top: 15px;
     left: 10px;
+
     h1{
         font-size: 20px;
-        font-family: "Anton", sans-serif;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
+        font-weight: 700;
         
     }
     p{
         font-size: 16px;
-        font-family: "roboto", sans-serif;
      
     }
 
 `
 
 const Img = styled.img`
+        width: 120px;
         height: 180px;
         position: absolute;
         top: 0px;
         right: 0px;
         border-radius: 0px 20px 20px 0px;
         object-fit: cover;
+        transition-delay: 1s;
         transition: all linear .5s;
         &:hover{
             width: 180px;
