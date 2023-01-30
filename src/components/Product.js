@@ -1,38 +1,55 @@
 import styled from "styled-components";
-import coin from "../assets/drivencoin.png"
-import arrow from "../assets/arrow-back-outline.svg"
-import user from "../assets/user.png"
-import add from "../assets/add-circle-outline.svg"
+import coin from "../assets/drivencoin.png";
+import arrow from "../assets/arrow-back-outline.svg";
+import user from "../assets/user.png";
+import add from "../assets/add-circle-outline.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Product() {
+    const next = useNavigate();
+
     return (
         <>
             <Corpo>
                 <Header>
-                    <img src={arrow} alt="back"></img>
-                    <img src={user} alt="user"></img>
+                    <img
+                        src={arrow}
+                        alt="back"
+                        onClick={() => {
+                            next("/home");
+                        }}
+                    ></img>
+                    <img
+                        src={user}
+                        alt="user"
+                        onClick={() => {
+                            next("/cart");
+                        }}
+                    ></img>
                 </Header>
                 <Content>
-                    <Image src="http://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=w255-h300-n-l64">
-                    </Image>
+                    <Image src="http://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=w255-h300-n-l64"></Image>
                     <Title>Sample Product</Title>
                     <Price>
                         <img src={coin} alt="coin"></img>
                         <h1>1000</h1>
                     </Price>
-                    <Desc>Arquitetura sintética, material termoplástico feito seguindo modelos sustentáveis</Desc>
+                    <Desc>
+                        Arquitetura sintética, material termoplástico feito
+                        seguindo modelos sustentáveis
+                    </Desc>
                 </Content>
-                    <Cart>
-                        <h2>Adicionar ao carrinho</h2>
-                        <img src={add} alt="add"></img>
-                    </Cart>
+                <Cart>
+                    <h2>Adicionar ao carrinho</h2>
+                    <img src={add} alt="add"></img>
+                </Cart>
             </Corpo>
         </>
     );
 }
 
 const Corpo = styled.div`
-    background-color: #e7edfa;
+    background-color: #ffd580;
     width: 375px;
     height: 100vh;
 `;
@@ -41,7 +58,7 @@ const Header = styled.header`
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #e7edfa;
+    background-color: #ffd580;
     width: 100vw;
     height: 6vh;
     display: flex;
@@ -52,7 +69,7 @@ const Header = styled.header`
         height: 30px;
         margin: 14px;
     }
-`
+`;
 
 const Content = styled.div`
     display: flex;
@@ -60,15 +77,15 @@ const Content = styled.div`
     margin: 0 auto 0 auto;
     flex-direction: column;
     width: 76vw;
-`
+`;
 
 const Image = styled.img`
     margin: 70px auto 15px auto;
     width: 75vw;
     height: 40vh;
-    border: 8px solid #93ADD3;
+    border: 4px solid orangered;
     border-radius: 10px;
-`
+`;
 
 const Title = styled.h1`
     display: flex;
@@ -76,7 +93,7 @@ const Title = styled.h1`
     font-size: 24px;
     font-family: "Roboto Condensed";
     font-weight: 600;
-`
+`;
 
 const Price = styled.div`
     position: relative;
@@ -96,23 +113,23 @@ const Price = styled.div`
         top: 7px;
         left: 45px;
     }
-`
+`;
 
 const Desc = styled.p`
     margin-top: 5px;
     display: flex;
     font-size: 18px;
     line-break: normal;
-`
+`;
 
 const Cart = styled.button`
     position: relative;
-    margin: 50px auto 0 auto;
+    margin: 42px auto 0 auto;
     display: flex;
     width: 70vw;
     height: 6vh;
-    background-color: #93ADD3;
-    border: 2px solid #e7eddd;
+    background-color: orangered;
+    border: none;
     border-radius: 24px;
 
     h2 {
@@ -131,4 +148,4 @@ const Cart = styled.button`
         width: 32px;
         height: 32px;
     }
-`
+`;
