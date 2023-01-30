@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage";
 import { AuthProvider } from "./Context/autentificationContext";
 import Login from "./components/LoginPage";
 import Carrinho from "./components/CarrinhoPage";
+import Product from "./components/Product";
 
 export default function App() {
     return (
@@ -14,10 +15,10 @@ export default function App() {
             <GlobalStyle />
             <Routes>
                 <Route element={<AuthProvider />}>
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/" element={<Login/>}/>
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/register" element={<RegisterPage />} />
-                    <Route path="/checkout" element={<Carrinho />} />
+                    <Route path="/product" element={<Product />} />
                 </Route>
 
 

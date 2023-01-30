@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const next = useNavigate();
 
     function signUp(e) {
         e.preventDefault();
@@ -25,7 +27,7 @@ export default function RegisterPage() {
             })
             .then((res) => {
                 console.log(res.data);
-                alert("Usuário cadastrado");
+                next("/home")
             })
             .catch((err) => {
                 console.log(err);
@@ -89,6 +91,8 @@ export default function RegisterPage() {
 }
 
 const Body = styled.div`
+    background-color: #e7edfa;
+    height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;

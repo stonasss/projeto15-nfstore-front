@@ -42,7 +42,7 @@ export default function Login() {
                     <InputEmail data-test="email" name="email" onChange={handleInputChange} />
                     <InputSenha data-test="password" type="password" name="senha" onChange={handleInputChange} />
                     <BotaoEntrar data-test="sign-in-submit" type="submit">Entrar</BotaoEntrar>
-                    <Link to="/cadastro">
+                    <Link to="/register">
                         <IrCadastro data-test="signup-link">Primeira vez? Cadastre-se!</IrCadastro>
                     </Link>
                 </form>
@@ -54,7 +54,7 @@ export default function Login() {
 const Corpo = styled.div`
 background-color: #FFD580;
 width:375px;
-height:667px;
+height:100vh;
 box-sizing:border-box;
 position:relative;
 justify-content:center;
@@ -162,7 +162,7 @@ const BotaoEntrar = styled.button`
     font-weight: 700;
     font-size: 25px;
     line-height: 23px;
-    color: #FFFFFF;
+    color: #060f17;
   `
 
 const BotaoEntrarLoading = styled.button`
