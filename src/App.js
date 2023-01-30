@@ -6,6 +6,7 @@ import RegisterPage from "./components/RegisterPage";
 import HomePage from "./components/HomePage";
 import { AuthProvider } from "./Context/autentificationContext";
 import Login from "./components/LoginPage";
+import Carrinho from "./components/CarrinhoPage";
 import Product from "./components/Product";
 
 export default function App() {

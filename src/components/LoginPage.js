@@ -13,10 +13,12 @@ export default function Login() {
     const [error, setError] = useState(null);
     const { setToken, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const sendInfo = (e) => {
+
+    const sendInfo = async (e) => {
         e.preventDefault();
         axios.post('/sign-in', form)
             .then(({ data }) => {
+                //config
                 axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
                 setToken(data.token);
                 setUser(data.user);
@@ -34,7 +36,7 @@ export default function Login() {
             <Corpo>
 
                 <Logo>
-                    <img ></img>
+                    NFsTore
                 </Logo>
                 <form onSubmit={sendInfo}>
                     <InputEmail data-test="email" name="email" onChange={handleInputChange} />
@@ -50,8 +52,8 @@ export default function Login() {
 }
 
 const Corpo = styled.div`
-background-color: #e7edfa;
 width:100vw;
+background-color: #FFD580;
 height:100vh;
 display: flex;
 margin: auto;
@@ -63,6 +65,9 @@ display:flex;
 const Logo = styled.div`
 position:absolute;
 top:159px;
+color:black;
+font-size:40px;
+font-family: 'Unbounded', cursive;
 `
 
 const InputEmail = styled.input.attrs({
@@ -78,9 +83,9 @@ const InputEmail = styled.input.attrs({
             top:233px;
             left:25px;
             background: #FFFFFF;
-            border: 1px solid #D5D5D5;
+            border: 1px solid orangered;
             border-radius: 5px;
-            font-family: 'Lexend Deca';
+            font-family: "Roboto Condensed";
             font-style: normal;
             font-weight: 400;
             font-size: 19.976px;
@@ -116,9 +121,9 @@ const InputSenha = styled.input.attrs({
             top:304px;
             left:25px;
             background: #FFFFFF;
-            border: 1px solid #D5D5D5;
+            border: 1px solid orangered;
             border-radius: 5px;
-            font-family: 'Lexend Deca';
+            font-family: "Roboto Condensed";
             font-style: normal;
             font-weight: 400;
             font-size: 19.976px;
@@ -151,12 +156,13 @@ const BotaoEntrar = styled.button`
     height: 46px;
     top: 375px;
     left:25px;
-    background: #93add3;
+    background: orange;
+    border: 1px solid orangered;
     border-radius: 5px;
-    font-family: 'Raleway';
+    font-family: "Roboto Condensed";
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 23px;
     color: #060f17;
   `
@@ -189,11 +195,11 @@ width: 200px;
 height: 18px;
 left: 92px;
 top: 457px;
-font-family: 'Raleway';
+font-family: "Roboto Condensed";
 font-style: normal;
 font-weight: 700;
 font-size: 15px;
 line-height: 18px;
 /* identical to box height */
-color: #060f17;
+color: black;
   `
