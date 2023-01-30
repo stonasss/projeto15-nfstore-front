@@ -15,15 +15,13 @@ export default function App() {
             <GlobalStyle />
             <Routes>
                 <Route element={<AuthProvider />}>
-                    <Route path="/" element={<Login/>}/>
+                    <Route path="/" element={<Login />} />
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/register" element={<RegisterPage />} />
                     <Route path="/product" element={<Product />} />
+                    <Route path="/cart" element={<Carrinho />} />
                 </Route>
-
-
             </Routes>
-
         </BrowserRouter>
     );
 }

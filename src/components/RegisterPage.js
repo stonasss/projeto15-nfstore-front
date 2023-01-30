@@ -91,7 +91,7 @@ export default function RegisterPage() {
 }
 
 const Body = styled.div`
-    background-color: #e7edfa;
+    background-color: #ffd580;
     height: 100vh;
     margin: auto;
     display: flex;
@@ -133,8 +133,8 @@ const Button = styled.button`
     font-family: "Roboto Condensed";
     font-size: 16px;
     font-weight: 600;
-    color: #fe6910;
-    background-color: #f7dfd6;
-    border-radius: 5px;
+    color: black;
+    background-color: orange;
+    border-radius: 2px solid orangered;
     border-style: none;
 `;
