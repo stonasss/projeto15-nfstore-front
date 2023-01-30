@@ -1,12 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import arrow from "../assets/arrow-back-outline.svg"
+import user from "../assets/user.png"
 
 export default function Carrinho(){
+    const next = useNavigate();
+
     return(
         <>
         <Header>
-            <img src="assets/arrow.png" alt="arrow"/>
+            <img src={arrow} alt="arrow" onClick={() => {next("/home")}}/>
             <span>Checkout</span>
-            <img src="assets/user.png" alt="user"/>
+            <img src={user} alt="user"/>
         </Header>
         <ContainerPrincipal>
             <Item>

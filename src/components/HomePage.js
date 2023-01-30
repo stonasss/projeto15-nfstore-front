@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react"
 import axios from "axios";
+import user from "../assets/user.png"
+import search from "../assets/lupa.png"
 
 function HomePage() {
 
@@ -20,9 +22,9 @@ function HomePage() {
 
             <Navbar>
 
-            <Top>Let’s get  started <img src="assets/user.png" alt="user"/></Top>
+            <Top>Let’s get  started <img src={user} alt="user"/></Top>
             <Search>
-                <button onSubmit={""}><img src="assets/lupa.png" alt="lupa"/></button>
+                <button onSubmit={""}><img src={search} alt="lupa"/></button>
                 <input
                 value={search}
                 type="text"
