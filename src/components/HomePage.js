@@ -109,7 +109,7 @@ const Screen = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #E7EDFA;
+    background-color: #FFD580;
 `;
 
 const Navbar = styled.div`
@@ -118,7 +118,8 @@ const Navbar = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #93ADD3;
+    background-color: #FFD580;
+    border: 1px solid orangered;
     margin: 50px 0px;
     padding: 15px ;
     box-sizing: border-box;
@@ -127,9 +128,9 @@ const Navbar = styled.div`
 `
 
 const Top = styled.div`
-    font-family: "Anton", sans-serif;
-    color: white;
-    font-size: 24px ;
+    font-family: "Roboto Condensed";
+    color: black;
+    font-size: 30px ;
     width: 326px;
     display: flex;
     justify-content: space-between;
@@ -146,6 +147,7 @@ const Top = styled.div`
 const Search =styled.div`
     width: 326px;
     height: 40px;
+    font-family:"Roboto Condensed";
     border-radius: 40px;
     background-color: white;
     margin-bottom: 15px;

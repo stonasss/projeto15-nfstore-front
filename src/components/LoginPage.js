@@ -23,7 +23,9 @@ export default function Login() {
                 setToken(data.token);
                 setUser(data.user);
                 navigate('/home');
-            }).catch(error => setError(error.response.data));
+            }).catch(()=>{
+                alert("Confira o email e senha inseridos!")
+            });
     }
 
     const handleInputChange = useCallback(({ target: { name, value } }) => setForm({
