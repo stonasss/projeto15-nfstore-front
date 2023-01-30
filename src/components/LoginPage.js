@@ -51,8 +51,10 @@ export default function Login() {
 
 const Corpo = styled.div`
 background-color: #e7edfa;
-width:375px;
+width:100vw;
 height:100vh;
+display: flex;
+margin: auto;
 box-sizing:border-box;
 position:relative;
 justify-content:center;
